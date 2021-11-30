@@ -1,4 +1,4 @@
-# Projet 1
+# Projet-1
 calculatrice
 <br />Outils utilisés : création du fichier via touch sur raspberry puis open calculatrice.sh pour l'éditer
 <br />J'ai suivi sur le site openclassroom les conseils pour développer le fichier, les cours qui nous ont éte fourni et divers forum pour comprendre certaines erreurs.
