@@ -1,7 +1,7 @@
 #!/bin/bash
 calc(){ awk "BEGIN { print $* }"; }
 while [ -z $continuer ] || [ $continuer != 'non' ] #faire attention aux espaces ils m'ont faire perdre énormement de temps
-do												   #tant que 'non' n'est pas écrit on coninue de faire des calculs
+do						   #tant que 'non' n'est pas écrit on coninue de faire des calculs
 	echo "Entrez le symbole du calcul que vous voulez effectuer : +,-,*,/"
 	read calcul
 	case $calcul in #je fais un switch des différents calcul
