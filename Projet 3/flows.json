@@ -1,0 +1,136 @@
+[
+    {
+        "id": "b40a5a74fa5129dd",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "313d60fd95401a91",
+        "type": "ui_gauge",
+        "z": "b40a5a74fa5129dd",
+        "name": "Temperature",
+        "group": "5d533b7ee0c3d567",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Temp",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "80",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 570,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "4038dfea962cf77d",
+        "type": "ui_chart",
+        "z": "b40a5a74fa5129dd",
+        "name": "",
+        "group": "5d533b7ee0c3d567",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temp °C en fonction du temps",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 460,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "627cd93b3da3e3a3",
+        "type": "function",
+        "z": "b40a5a74fa5129dd",
+        "name": "",
+        "func": "var temp = msg.payload\nmsg.payload = temp.temerature;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 400,
+        "wires": [
+            [
+                "313d60fd95401a91",
+                "4038dfea962cf77d"
+            ]
+        ]
+    },
+    {
+        "id": "65533920df309bca",
+        "type": "rpi-sensehatsim in",
+        "z": "b40a5a74fa5129dd",
+        "name": "Temperature",
+        "motion": false,
+        "env": true,
+        "stick": false,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "627cd93b3da3e3a3"
+            ]
+        ]
+    },
+    {
+        "id": "5d533b7ee0c3d567",
+        "type": "ui_group",
+        "name": "Température en °C",
+        "tab": "3e325a4ea9051380",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3e325a4ea9051380",
+        "type": "ui_tab",
+        "name": "node",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
